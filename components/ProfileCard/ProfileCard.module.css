@@ -1,0 +1,42 @@
+.container{
+    @apply w-screen h-full min-h-[90vh] flex flex-col items-center pt-[6.5vh] ;
+}
+
+.form{
+    @apply w-full md:w-[90%] lg:w-[75%] xl:w-[60%] h-full md:border md:border-t-0 p-2 ;
+}
+
+.topbox{
+    @apply py-2 h-full w-full; 
+}
+
+.selectionbar{
+    @apply w-full flex flex-row justify-center ;
+}
+
+.selectionbar > div {
+    @apply w-[30%] flex justify-center py-1  border-zinc-200 border-b mx-1 z-10 ;
+}
+.button{
+    @apply text-xl text-gray-400 hover:text-black transition-colors duration-300  tracking-tighter;
+}
+
+.textbox{
+    @apply w-full flex justify-center ;
+}
+.imagebox{
+    @apply w-full  flex justify-center;
+}
+.itemsbox{
+    @apply min-h-[30vh] h-full w-full bg-slate-400;
+}
+
+.svg{
+    @apply bg-gradient-to-tr from-rose-300 via-gray-200 to-slate-400 rounded-full;
+    width:150px;
+    height:150px;
+}
+
+.image{
+   
+}

@@ -1,0 +1,26 @@
+.card{
+    @apply  border border-zinc-200 border-opacity-60 m-[0.25rem] h-[25vh] ;
+    
+}
+
+.imagebox{
+    @apply w-[100%]  h-[100%];
+}
+
+.textbox{
+    @apply w-full h-[20%] ;
+}
+
+.title{
+    @apply font-bold tracking-tight mx-2;
+}
+
+.price{
+    @apply font-bold  rounded-full ;
+}
+
+.image{
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}

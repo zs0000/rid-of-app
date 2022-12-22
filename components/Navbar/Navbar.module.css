@@ -1,0 +1,33 @@
+.container {
+    @apply w-full h-[6.5vh] fixed border-b bg-white border-zinc-200 flex flex-row justify-center shadow-sm;
+    min-height: 35px;
+    z-index: 3;
+}
+.items{
+    @apply w-full md:w-[95%] h-full flex flex-row ;
+    z-index: 4;
+}
+
+.titlebox{
+    @apply w-[25%] h-full flex items-center;
+}
+
+.title{
+    @apply text-4xl xl:text-5xl font-bold text-[#AA4465] hover:cursor-pointer ;
+}
+
+.searchcontainer{
+    @apply w-[50%] h-full flex items-center;
+}
+
+.search{
+    @apply w-[100%] border h-[80%] rounded-full border-zinc-400;
+}
+
+.links{
+    @apply w-[25%] h-full flex  items-center justify-end space-x-6;
+}
+
+.link{
+    @apply text-sm tracking-tight pt-1;
+}

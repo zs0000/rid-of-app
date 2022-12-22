@@ -1,0 +1,19 @@
+.container{
+    @apply w-screen h-screen fixed  ;
+}
+
+.menublob{
+    @apply absolute bottom-10 right-10 p-4 rounded-full  bg-black hover:cursor-pointer ;
+}
+
+.menu{
+    @apply absolute flex flex-col  space-y-1  bottom-5 right-5 bg-white shadow-2xl rounded-2xl px-2 py-1 h-[200px] w-[180px];
+}
+
+.itembox{
+    @apply border-b py-1 w-full;
+}
+
+.item{
+    @apply hover:text-sky-700 transition-colors duration-300 w-[100%];
+}

@@ -1,0 +1,3 @@
+.container{
+    @apply w-full  h-full bg-white grid grid-cols-1 md:grid-cols-3;
+}

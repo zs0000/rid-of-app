@@ -1,0 +1,52 @@
+.container{
+    @apply w-full h-full;
+}
+
+.banner{
+    @apply w-full md:h-[50vh]   overflow-y-hidden  ;
+    
+}
+.boxbox{
+    @apply w-full flex flex-col items-center md:flex-row h-[40vh] md:w-[100%] absolute justify-center;
+}
+
+.leftbox{
+    @apply flex justify-center w-[50%]  h-[40vh] mt-2 md:mt-10 items-center  z-20;
+}
+.rightbox{
+    @apply flex justify-center w-[45%]  h-[40vh] mt-2 md:mt-10 items-center  z-20 ;
+}
+
+.messagebox{
+    @apply  flex justify-center items-center bg-black p-4 md:p-8 rounded-xl bg-opacity-70 xl:w-[50%];
+}
+
+.message{
+    @apply z-10   text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white tracking-tight ;
+}
+.buttonbox{
+    @apply bg-zinc-400;
+}
+
+.button{
+    @apply px-8 py-4 text-lg text-white;
+}
+.image{
+   
+    z-index: 9;
+    object-fit: cover;
+    object-position: center;
+}
+
+@screen md{
+    .image{
+        transform:translateY(-10%);
+        z-index:0;
+    }
+}
+@screen lg{
+    .image{
+        transform:translateY(-20%);
+
+    }
+}
