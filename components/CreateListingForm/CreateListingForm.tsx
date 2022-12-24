@@ -3,6 +3,7 @@ import s from "./CreateListingForm.module.css"
 import {useState, useReducer} from "react"
 import {BsCameraFill} from "react-icons/bs"
 import Image from "next/image";
+import { useRouter } from "next/router";
 const axios = require('axios').default;
 interface Listing {
     listing_title?:string;
@@ -15,7 +16,7 @@ function CreateListingForm({data}) {
     const [imageSelected, setImageSelected] = useState("");
     const [postingImage, setPostingImage] = useState("none");
     const [imageUrl, setImageUrl] = useState(null);
-   
+    const router = useRouter()
     
     
 
@@ -29,7 +30,7 @@ function CreateListingForm({data}) {
         {listing_title:"", listing_description:"", listing_price:"", listing_image_url:""}
         )
     let inputs={
-        id: data.id,
+        user_id: data.id,
         username:data.username,
         listing_title:listingData.listing_title,
         listing_description:listingData.listing_description,
@@ -37,7 +38,7 @@ function CreateListingForm({data}) {
         listing_price:listingData.listing_price,
         listing_created_on:current,
     }
-    
+   
     const listingMutation = useCreateListing(inputs)
     const formData = new FormData()
     formData.append("upload_preset", "jrkwcuxy")
@@ -59,7 +60,9 @@ function CreateListingForm({data}) {
         console.error(err.message)
        }
       } 
-
+      if(listingMutation.isSuccess){
+        router.push("/dashboard")
+      }
 
   return (
     <div className={s.form}>
@@ -69,13 +72,19 @@ function CreateListingForm({data}) {
                         <input
                         type="text"
                         id="listing_title"
-                        placeholder=""
+                        placeholder="Listing title"
+                        value={listingData.listing_title}
                         className={s.title}
+                        onChange={(e)=> setListingData({
+                            listing_title:e.target.value
+                        })}
                         />
                     </div>
                     <div className={s.pricebox}>
                         {"$"}
-                        <input type="text" onChange={(e)=> setPrice(e.target.value)} value={price} placeholder="1" className={s.value}>
+                        <input type="text" min="1" max="10000"  onChange={(e)=> setListingData({
+                            listing_price:e.target.value
+                        })} value={listingData.listing_price} placeholder="1" className={s.value}>
                          
                         </input>
                         <input
@@ -84,8 +93,10 @@ function CreateListingForm({data}) {
                         max="10000"
                         placeholder="1"
                         id="listing_price"
-                        value={price}
-                        onChange={(e)=>setPrice(e.target.value)}
+                        value={listingData.listing_price}
+                        onChange={(e)=> setListingData({
+                            listing_price:e.target.value
+                        })}
                         className={s.price}
                         />
                         
@@ -95,7 +106,11 @@ function CreateListingForm({data}) {
                         <div className={s.textareabox}>
                             <textarea
                             className={s.textarea}
-
+                            value={listingData.listing_description}
+                            placeholder="Listing description"
+                            onChange={(e)=> setListingData({
+                                listing_description:e.target.value
+                            })}
                             />
                         </div>
                     </div>
@@ -110,10 +125,19 @@ function CreateListingForm({data}) {
                         <span className={s.status}>
                         {"Status: "}
                         </span>
-                        <span>{postingImage ==  "none" ? "Please select a photo by clicking the camera above." : postingImage=="uploading" ? "Uploading..." : "Photo has been selected."}</span>
+                        <span className={s.statusmessage}>{postingImage ==  "none" ? "Please select a photo by clicking the camera above." : postingImage=="uploading" ? "Uploading..." : "Photo has been selected. "}</span>
+                        {postingImage == "uploaded" ? 
+                        <button
+                        onClick={(e)=> {
+
+                            handleImageSelect(e)
+                        }}
+                         className={s.changebutton}>
+                            (click here to change selection.)
+                        </button> : <></> }
                     </div>
                     <div className={s.buttonbox}>
-                        <button onClick={()=> handleImageUpload()} className={s.button}>
+                        <button onClick={()=> listingMutation.mutate()} className={s.button}>
                             Create
                         </button>
                     </div>
@@ -121,9 +145,11 @@ function CreateListingForm({data}) {
                     type="file"
                     id="file_input"
                     onChange={(e)=> {
-                        setPostingImage("uploading")
+                        if(e.target.files[0]){
+                            setPostingImage("uploading")
                         formData.append("file", e.target.files[0])
                         handleImageUpload(e)
+                        }
                     }
                         
                      

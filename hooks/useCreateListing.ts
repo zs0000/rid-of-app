@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "react-query"
 import { supabase } from "../utils/supabaseClient";
 
 interface Listing {
-    id: string;
+    user_id: string;
     username:string;
     listing_title?:string;
     listing_description?:string;
@@ -12,9 +12,18 @@ interface Listing {
   }
 
 const createListing = async(listing: Listing) =>{
-    const {data} = await supabase
+    
+    const {data,error} = await supabase
     .from("listings")
     .insert(listing)
+
+    
+
+    if(error){
+        console.log(error)
+    } else{
+        
+    }
     return data
 }
 

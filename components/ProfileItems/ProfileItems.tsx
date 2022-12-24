@@ -1,12 +1,17 @@
+import useUserListings from "../../hooks/useUsersListings"
 import ProfileItemCard from "../ProfileItemCard/ProfileItemCard"
 import s from "./ProfileItems.module.css"
 
-function ProfileItems({items}) {
+function ProfileItems({username}) {
+ 
+  const {data, error} = useUserListings({username})
+  console.log(data)
+ 
   return (
     <div className={s.container}>
-        {items.map((item)=>(
+        {data? data.map((item)=>(
           <ProfileItemCard key={item} item={item}/>
-        ))}
+        )) : <></>}
     </div>
   )
 }

@@ -4,6 +4,7 @@ import * as style from '@dicebear/micah';
 import Image from "next/image";
 import ProfileItems from "../ProfileItems/ProfileItems";
 import g from "../../public/bottle.jpg"
+import useUserListings from "../../hooks/useUsersListings";
 
 interface User{
     username:string;
@@ -11,7 +12,7 @@ interface User{
 
 function ProfileCard({data}:{data:User}) {
 
-    let items = [
+    let sellingItems = [
         {
             title:"lorem ispsum dole eta it",
             price:350.00,
@@ -38,6 +39,7 @@ function ProfileCard({data}:{data:User}) {
             image:g
         }
     ]
+   
     
 
     let seed=data.username
@@ -74,7 +76,7 @@ let svg = createAvatar(style, {
             </div>
             <div className={s.itemsbox}>
                 <ProfileItems
-                items={items}
+                username={data.username}
                 />
             </div>
         </div>

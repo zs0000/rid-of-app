@@ -6,6 +6,7 @@ import s from "./Dashboard.module.css"
 
 function Dashboard() {
     const {data,isLoading, isError} =useUser();
+    
   return (
     <ProtectedWrapper>
         <div className={s.container}>

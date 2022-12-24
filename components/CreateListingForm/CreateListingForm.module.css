@@ -1,5 +1,5 @@
 .form{
-    @apply w-full md:w-[90%] lg:w-[75%] xl:w-[60%] h-[100vh] flex flex-col items-center pt-4 border-r border-l border-zinc-200 border-opacity-50  p-1 ;
+    @apply w-full md:w-[90%] lg:w-[62%] xl:w-[50%] h-[100vh] flex flex-col items-center pt-8 border-r border-l border-zinc-200 border-opacity-50  p-1 ;
     z-index: 1;
 }
 
@@ -12,11 +12,11 @@
 }
 
 .titlebox{
-    @apply w-[70%];
+    @apply w-[70%] ;
 }
 
 .title{
-    @apply w-[95%] h-[4vh] rounded bg-zinc-100;
+    @apply w-[95%] h-[4vh] rounded bg-zinc-100 px-2;
 }
 
 .secondbox{
@@ -32,7 +32,7 @@
 }
 
 .textarea{
-    @apply w-full p-1 resize-none rounded h-full bg-zinc-100;
+    @apply w-full px-2 pt-2 resize-none rounded h-full bg-zinc-100;
 }
 
 .pricebox{
@@ -40,7 +40,7 @@
 }
 
 .value{
-    @apply w-[40%];
+    @apply w-[40%] bg-zinc-100 rounded-lg md:mx-1 md:px-2;
 }
 
 .price {
@@ -63,15 +63,15 @@
 }
 
 .bottombox{
-    @apply w-[90%] mt-1;
+    @apply w-[90%];
 }
 
 .buttonbox{
-    @apply w-full flex justify-center;
+    @apply w-full  flex justify-center;
 }
 
 .button{
-    @apply px-6 py-2 shadow border font-bold text-zinc-100 border-zinc-300 bg-[#AA4465];
+    @apply w-full py-4 rounded  font-bold text-zinc-200  bg-[#8e3551];
 }
 
 .svgbox{
@@ -83,5 +83,13 @@
 }
 
 .statusbox{
-    @apply text-sm  tracking-tight;
+    @apply text-sm  tracking-tight my-2;
+}
+
+.status{
+    @apply font-bold text-xs;
+}
+
+.statusmessage{
+    @apply text-sm underline;
 }

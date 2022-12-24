@@ -3,7 +3,7 @@
 }
 
 .form{
-    @apply w-full md:w-[90%] lg:w-[75%] xl:w-[60%] h-full md:border md:border-t-0 p-2 ;
+    @apply w-full md:w-[90%] lg:w-[62%] xl:w-[50%] h-full md:border md:border-t-0 p-2 ;
 }
 
 .topbox{
@@ -28,7 +28,7 @@
     @apply w-full  flex justify-center;
 }
 .itemsbox{
-    @apply min-h-[30vh] h-full w-full bg-slate-400;
+    @apply min-h-[20vh] h-full w-full ;
 }
 
 .svg{

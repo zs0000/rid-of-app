@@ -5,7 +5,7 @@ function ProfileItemCard({item}) {
   return (
     <div className={s.card}>
         <div className={s.imagebox}>
-        <Image src={item.image} className={s.image} alt="item image" />
+        <Image src={item.listing_image_url} width={500} height={500} className={s.image} alt="item image" />
         </div>
         
     </div>
