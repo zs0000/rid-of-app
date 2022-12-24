@@ -1,0 +1,4 @@
+.container{
+    @apply w-full h-full min-h-screen flex flex-col justify-center items-center pt-[6vh];
+}
+

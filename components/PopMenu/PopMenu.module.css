@@ -1,9 +1,10 @@
 .container{
-    @apply w-screen h-screen fixed  ;
+    @apply w-screen h-screen  ;
+    z-index: 0;
 }
 
 .menublob{
-    @apply absolute bottom-10 right-10 p-4 rounded-full  bg-black hover:cursor-pointer ;
+    @apply  bottom-10 right-10 p-4 rounded-full fixed bg-black hover:cursor-pointer z-10;
 }
 
 .menu{

@@ -13,7 +13,7 @@ function PopMenu() {
     }
   }
   return (
-    <div className={s.container}>
+    
       <div className={s.menublob} onClickCapture={(e) => handleMenuClick(e) }>
         <div className={menuOpen ? s.menu : "hidden"}>
           <div className={s.itembox}>
@@ -38,7 +38,7 @@ function PopMenu() {
           </div>
         </div>
       </div>
-    </div>
+    
   )
 }
 

@@ -1,0 +1,87 @@
+.form{
+    @apply w-full md:w-[90%] lg:w-[75%] xl:w-[60%] h-[100vh] flex flex-col items-center pt-4 border-r border-l border-zinc-200 border-opacity-50  p-1 ;
+    z-index: 1;
+}
+
+.topinputs{
+    @apply w-[90%] flex flex-col h-[25vh];
+}
+
+.firstbox{
+    @apply w-full flex flex-row;
+}
+
+.titlebox{
+    @apply w-[70%];
+}
+
+.title{
+    @apply w-[95%] h-[4vh] rounded bg-zinc-100;
+}
+
+.secondbox{
+    @apply w-full h-full mt-2 mb-4;
+}
+
+.fileinput{
+    @apply hidden;
+}
+
+.textareabox{
+    @apply w-full h-full mt-1;
+}
+
+.textarea{
+    @apply w-full p-1 resize-none rounded h-full bg-zinc-100;
+}
+
+.pricebox{
+    @apply w-[30%] flex flex-row items-center;
+}
+
+.value{
+    @apply w-[40%];
+}
+
+.price {
+    @apply w-full;
+}
+
+.picturebox{
+    @apply w-[90%] h-[40vh] flex flex-col items-center bg-zinc-100;
+}
+
+.image{
+   height: 100%;
+   width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.inputbox{
+ 
+}
+
+.bottombox{
+    @apply w-[90%] mt-1;
+}
+
+.buttonbox{
+    @apply w-full flex justify-center;
+}
+
+.button{
+    @apply px-6 py-2 shadow border font-bold text-zinc-100 border-zinc-300 bg-[#AA4465];
+}
+
+.svgbox{
+    @apply w-[50%] h-full flex justify-center items-center;
+}
+
+.svg{
+    @apply w-[20vw] h-[20vh] text-zinc-300 hover:cursor-pointer;
+}
+
+.statusbox{
+    @apply text-sm  tracking-tight;
+}

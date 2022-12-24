@@ -1,7 +1,7 @@
 .container {
-    @apply w-full h-[6.5vh] fixed border-b bg-white border-zinc-200 flex flex-row justify-center shadow-sm;
+    @apply w-full h-[6.5vh]  fixed border-b bg-white border-zinc-200 flex flex-row justify-center shadow-sm;
     min-height: 35px;
-    z-index: 3;
+    z-index: 40;
 }
 .items{
     @apply w-full md:w-[95%] h-full flex flex-row ;
