@@ -44,10 +44,7 @@ function ProfileCard({data}:{data:User}) {
 
     let seed=data.username
 
-let svg = createAvatar(style, {
-  seed: 'custom-seed',
-  // ... and other options
-});
+
   return (
     <div className={s.container}>
         <div className={s.form}>
@@ -59,7 +56,6 @@ let svg = createAvatar(style, {
             <span className="font-bold text-2xl md:text-3xl">
                 @{data.username}
             </span>
-            
             </div>
             </div>
             <div className={s.selectionbar}>

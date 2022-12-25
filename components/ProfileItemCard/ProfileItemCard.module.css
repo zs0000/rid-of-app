@@ -1,5 +1,5 @@
 .card{
-    @apply  border border-zinc-200 border-opacity-60 m-[0.25rem] h-[25vh] ;
+    @apply  border border-zinc-200 border-opacity-60 m-[0.25rem] h-[25vh] hover:cursor-pointer;
     
 }
 
