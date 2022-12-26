@@ -6,6 +6,9 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 const axios = require('axios').default;
 interface Listing {
+    listing_condition:string;
+    listing_category:string;
+    listing_local_pickup:boolean;
     listing_title?:string;
     listing_description?:string;
     listing_price?:any;
@@ -16,6 +19,7 @@ function CreateListingForm({data}) {
     const [imageSelected, setImageSelected] = useState("");
     const [postingImage, setPostingImage] = useState("none");
     const [imageUrl, setImageUrl] = useState(null);
+    const [localSelected, setLocalSelected] = useState<boolean>(false);
     const router = useRouter()
     
     
@@ -27,11 +31,14 @@ function CreateListingForm({data}) {
             ...data,
             ...partialData
         }),
-        {listing_title:"", listing_description:"", listing_price:"", listing_image_url:""}
+        {listing_condition:"", listing_category:"", listing_local_pickup:false,listing_title:"", listing_description:"", listing_price:"", listing_image_url:""}
         )
     let inputs={
         user_id: data.id,
         username:data.username,
+        listing_condition:listingData.listing_condition,
+        listing_category:listingData.listing_category,
+        listing_local_pickup:listingData.listing_local_pickup,
         listing_title:listingData.listing_title,
         listing_description:listingData.listing_description,
         listing_image_url:imageUrl,
@@ -69,69 +76,73 @@ function CreateListingForm({data}) {
                 <div className={s.topinputs}>
                 <div className={s.bottomfirstbox}>
                         <div className={s.conditionbox}>
-                            <select className={s.conditionselect}  placeholder="Choose item condition.">
-                                <option className={s.disabledoption} selected disabled >
+                            <select onChange={(e)=> setListingData({
+                                listing_condition:e.target.value
+                            })} className={s.conditionselect}  placeholder="Choose item condition.">
+                                <option  className={s.disabledoption} selected disabled >
                                 Item condition.
                                 </option>
-                                <option className={s.option}>
+                                <option value="Used" className={s.option}>
                                     Used
                                 </option>
-                                <option  className={s.option}>
+                                <option value="Like New"  className={s.option}>
                                     Like New
                                 </option>
-                                <option  className={s.option}>
+                                <option value="New"  className={s.option}>
                                     New
                                 </option>
-                                <option  className={s.option}>
+                                <option value="For parts"  className={s.option}>
                                     For parts
                                 </option>
                             </select>
                         </div>
                         <div className={s.category}>
-                            <select className={s.categoryselect}>
-                                <option className={s.disabledoption} selected disabled >
+                            <select className={s.categoryselect} onChange={(e)=> setListingData({
+                                listing_category:e.target.value
+                            })}>
+                                <option  className={s.disabledoption} selected disabled >
                                 Item category.
                                 </option>
-                                <option className={s.option}>
+                                <option  value="Electronics & Media" className={s.option}>
                                     Electronics & Media
                                 </option>
-                                <option className={s.option}>
+                                <option value="Home & Garden"  className={s.option}>
                                     Home & Garden
                                 </option>
-                                <option className={s.option}>
+                                <option value="Clothing, Shoes, & Accessories" className={s.option}>
                                     Clothing, Shoes, & Accessories
                                 </option>
-                                <option className={s.option}>
+                                <option value="Baby & Kids" className={s.option}>
                                     Baby & Kids
                                 </option>
-                                <option className={s.option}>
+                                <option value="Vehicles" className={s.option}>
                                     Vehicles                                   
                                 </option>
-                                <option className={s.option}>
+                                <option value="Toys, Games, & Hobbies" className={s.option}>
                                     Toys, Games, & Hobbies
                                 </option>
-                                <option className={s.option}>
+                                <option value="Sports & Outdoors" className={s.option}>
                                     Sports & Outdoors
                                 </option>
-                                <option className={s.option}>
+                                <option value="Collectibles & Art" className={s.option}>
                                     Collectibles & Art                                    
                                 </option>
-                                <option className={s.option}>
+                                <option value="Pet supplies" className={s.option}>
                                     Pet supplies
                                 </option>
-                                <option className={s.option}>
+                                <option value="Health & Beauty" className={s.option}>
                                     Health & Beauty
                                 </option>
-                                <option className={s.option}>
+                                <option value="Wedding" className={s.option}>
                                     Wedding
                                 </option>
-                                <option className={s.option}>
+                                <option value="Business Equipment" className={s.option}>
                                     Business Equipment                                    
                                 </option>
-                                <option className={s.option}>
+                                <option value="Tickets" className={s.option}>
                                     Tickets
                                 </option>
-                                <option className={s.option}>
+                                <option value="General" className={s.option}>
                                     General
                                 </option>
                             </select>
@@ -143,6 +154,13 @@ function CreateListingForm({data}) {
                         <input
                         type="checkbox"
                         className={s.pickup}
+                        value={localSelected}
+                        onChange={(e)=> {
+                            setLocalSelected(!localSelected)
+                            setListingData({
+                                listing_local_pickup:localSelected
+                            })
+                        }}
                         
                         />
                         </div>

@@ -4,6 +4,9 @@ import { supabase } from "../utils/supabaseClient";
 interface Listing {
     user_id: string;
     username:string;
+    listing_conditon?:string;
+    listing_category?:string;
+    listing_local_pickup:boolean;
     listing_title?:string;
     listing_description?:string;
     listing_price?:string;

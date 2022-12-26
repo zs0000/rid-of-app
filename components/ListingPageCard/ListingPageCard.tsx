@@ -11,16 +11,16 @@ function ListingPageCard({id} : {id:string}) {
     <>
     {data ? <div className={s.container}>
         <div className={s.titlebar}>
-        <span className={s.title}>
-           
-        </span>
+            <span className={s.category}>
+                        {data.listing_category}
+                    </span>
         </div>
         <div className={s.topbox}>
         <div className={s.imagebox}>
-            <Image src={data.listing_image_url} className={s.image} width={1000} height={1000} alt="listing image" />
+            <Image  src={data.listing_image_url} className={s.image} width={1000} height={1000} priority alt="listing image" />
         </div>
         <div className={s.interactbox}>
-         
+               
                 <div className={s.listinginfobox}>
                 <div className={s.listingtitlebox}>
                
@@ -28,7 +28,11 @@ function ListingPageCard({id} : {id:string}) {
                     {data.listing_title}
                 </span>
                 </div>
-                
+                <div className={s.listingconditionbox}>
+                    <span className={s.listingcondition}>
+                        {data.listing_condition}
+                    </span>
+                </div>
                 </div>
                 <div className={s.pricebox}>
                 <span className={s.price}>${data.listing_price}</span>

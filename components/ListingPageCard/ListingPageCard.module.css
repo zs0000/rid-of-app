@@ -11,7 +11,7 @@
 }
 
 .topbox{
-    @apply h-[50vh] w-full flex flex-col md:flex-row border-b ;
+    @apply md:h-[50vh] w-full flex flex-col md:flex-row border-b ;
 }
 
 .imagebox{
@@ -27,7 +27,7 @@
 }
 
 .buttonsbox{
-    @apply  h-full flex flex-col items-center;
+    @apply  h-full flex flex-col items-center w-full;
 }
 
 .inquire{
@@ -39,15 +39,27 @@
 
 
 .listingtitlebox{
-    @apply w-full p-2 pt-4 md:pt-10 flex justify-center text-zinc-600;
+    @apply w-[90%]  flex justify-center text-zinc-600;
 }
 
 .listingtitle{
-    @apply  font-bold tracking-tight text-2xl md:text-3xl text-black;
+    @apply  font-bold w-[100%] tracking-tight text-xl md:text-3xl  mr-4 text-black;
+}
+
+.categorybox{
+    @apply w-full ;
+}
+
+.listingconditionbox{
+    @apply text-sm mt-2;
+}
+
+.listingcondition{
+    @apply px-4 py-1 bg-zinc-200 rounded-lg  font-semibold ;
 }
 
 .pricebox{
-    @apply w-full py-4 md:pb-8  md:pt-10 flex justify-center;
+    @apply w-full py-2 md:pb-8  md:pt-10 flex justify-center;
 }
 
 .price{
@@ -55,7 +67,7 @@
 }
 
 .listinginfobox{
-    @apply w-full  flex flex-row;
+    @apply w-[50%] justify-center flex flex-row p-2 pt-4 md:pt-10 ;
 }
 
 .descriptionbox{
@@ -67,7 +79,7 @@
 }
 
 .interactbox{
-    @apply w-full h-full flex flex-col justify-center;
+    @apply w-full h-full flex flex-col items-center justify-center;
 }
 
 .sellerbox{
