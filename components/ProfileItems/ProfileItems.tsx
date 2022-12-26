@@ -10,7 +10,7 @@ function ProfileItems({username}) {
   return (
     <div className={s.container}>
         {data != null? data.map((item)=>(
-          <ProfileItemCard key={item} item={item}/>
+          <ProfileItemCard key={item.id} item={item}/>
         )) : 
           <>
           {loadingE.map((ele)=>(

@@ -67,6 +67,86 @@ function CreateListingForm({data}) {
   return (
     <div className={s.form}>
                 <div className={s.topinputs}>
+                <div className={s.bottomfirstbox}>
+                        <div className={s.conditionbox}>
+                            <select className={s.conditionselect}  placeholder="Choose item condition.">
+                                <option className={s.disabledoption} selected disabled >
+                                Item condition.
+                                </option>
+                                <option className={s.option}>
+                                    Used
+                                </option>
+                                <option  className={s.option}>
+                                    Like New
+                                </option>
+                                <option  className={s.option}>
+                                    New
+                                </option>
+                                <option  className={s.option}>
+                                    For parts
+                                </option>
+                            </select>
+                        </div>
+                        <div className={s.category}>
+                            <select className={s.categoryselect}>
+                                <option className={s.disabledoption} selected disabled >
+                                Item category.
+                                </option>
+                                <option className={s.option}>
+                                    Electronics & Media
+                                </option>
+                                <option className={s.option}>
+                                    Home & Garden
+                                </option>
+                                <option className={s.option}>
+                                    Clothing, Shoes, & Accessories
+                                </option>
+                                <option className={s.option}>
+                                    Baby & Kids
+                                </option>
+                                <option className={s.option}>
+                                    Vehicles                                   
+                                </option>
+                                <option className={s.option}>
+                                    Toys, Games, & Hobbies
+                                </option>
+                                <option className={s.option}>
+                                    Sports & Outdoors
+                                </option>
+                                <option className={s.option}>
+                                    Collectibles & Art                                    
+                                </option>
+                                <option className={s.option}>
+                                    Pet supplies
+                                </option>
+                                <option className={s.option}>
+                                    Health & Beauty
+                                </option>
+                                <option className={s.option}>
+                                    Wedding
+                                </option>
+                                <option className={s.option}>
+                                    Business Equipment                                    
+                                </option>
+                                <option className={s.option}>
+                                    Tickets
+                                </option>
+                                <option className={s.option}>
+                                    General
+                                </option>
+                            </select>
+                        </div>
+                        <div className={s.localbox}>
+                        <span className={s.locallabel}>
+                            Pick-up available if local?
+                        </span>
+                        <input
+                        type="checkbox"
+                        className={s.pickup}
+                        
+                        />
+                        </div>
+                    </div>
                     <div className={s.firstbox}>
                     <div className={s.titlebox}>
                         <input
@@ -102,6 +182,7 @@ function CreateListingForm({data}) {
                         
                     </div>
                     </div>
+                    
                     <div className={s.secondbox}>
                         <div className={s.textareabox}>
                             <textarea
