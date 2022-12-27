@@ -1,0 +1,28 @@
+.container{
+    @apply w-full md:w-[90%] lg:w-[62%] xl:w-[50%] pt-[6vh] min-h-screen flex flex-col items-center border p-1;
+}
+
+.categorybar{
+    @apply w-full h-[40px] z-20 flex  border-b mb-2;
+   
+}
+
+.categories{
+    @apply w-[100%] text-xs tracking-tighter;
+}
+
+.menubox{
+    @apply h-[40px] w-full justify-center  flex items-center ;
+}
+
+.menuicon{
+    @apply hover:cursor-pointer hover:scale-125 transition-transform duration-300 ;
+}
+
+.menuitems{
+    @apply w-[100%]  z-20 h-[200px] bg-zinc-100 shadow-md;
+}
+
+.itemcontainer{
+    @apply w-[80%] h-full grid grid-cols-2;
+}
