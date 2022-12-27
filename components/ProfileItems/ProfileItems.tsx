@@ -9,6 +9,38 @@ function ProfileItems({username}) {
  
   return (
     <div className={s.container}>
+        {data?.length == 0 ? 
+        <><div className={s.blank}>
+          
+        </div>
+        <div className={s.blank}>
+          No
+        </div>
+        <div className={s.blank}>
+          
+        </div>
+        <div className={s.blank}>
+          
+        </div>
+        <div className={s.blank}>
+          listings
+        </div>
+        <div className={s.blank}>
+          
+        </div>
+        <div className={s.blank}>
+          
+        </div>
+        <div className={s.blank}>
+         found. 
+        </div>
+        <div className={s.blank}>
+          
+        </div>
+        </>
+          :
+          <></>
+      }
         {data != null? data.map((item)=>(
           <ProfileItemCard key={item.id} item={item}/>
         )) : 

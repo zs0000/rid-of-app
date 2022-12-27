@@ -24,7 +24,7 @@ export default function Navbar() {
         <div className={s.links}>
            {data  ?
            <>
-           <span className={s.link}>Hello, {data.username}!</span>
+          
            <Link className={s.link} href="/dashboard">
             Dashboard
            </Link>

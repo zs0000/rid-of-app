@@ -10,7 +10,7 @@ function Dashboard() {
   return (
     <ProtectedWrapper>
         <div className={s.container}>
-            {isLoading ? <> ...</> :<ProfileCard data={data} />}
+            {isLoading ? <> ...</> :<ProfileCard username={data.username} />}
         </div>
     </ProtectedWrapper>
   )

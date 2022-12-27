@@ -15,7 +15,7 @@
 }
 
 .imagebox{
-    @apply w-full md:max-w-[375px] flex justify-center md:justify-start bg-zinc-100 h-full;
+    @apply w-full md:max-w-[500px] flex justify-center md:justify-start bg-zinc-100 h-full;
 }
 .infobox{
     @apply w-full flex flex-row justify-end ;
@@ -31,15 +31,15 @@
 }
 
 .inquire{
-    @apply px-4 py-3 my-1 w-[50%] border bg-[#a881af] text-white font-bold;
+    @apply px-4 py-3 my-1 w-[60%] border bg-[#a881af] text-white font-bold;
 }
 .buynow{
-    @apply px-4 py-3 mb-1 w-[50%] border bg-[#80669d] text-white font-bold;
+    @apply px-4 py-3 mb-1 w-[60%] border text-center bg-[#80669d] text-white font-bold;
 }
 
 
 .listingtitlebox{
-    @apply w-[90%]  flex justify-center text-zinc-600;
+    @apply w-full  flex justify-center text-zinc-600;
 }
 
 .listingtitle{
@@ -51,11 +51,11 @@
 }
 
 .listingconditionbox{
-    @apply text-sm mt-2;
+    @apply text-sm   w-full flex justify-end;
 }
 
 .listingcondition{
-    @apply px-4 py-1 bg-zinc-200 rounded-lg  font-semibold ;
+    @apply  bg-zinc-200 w-[68px] justify-center items-center flex h-[24px] rounded-lg tracking-tighter text-xs font-semibold ;
 }
 
 .pricebox{
@@ -67,7 +67,7 @@
 }
 
 .listinginfobox{
-    @apply w-[50%] justify-center flex flex-row p-2 pt-4 md:pt-10 ;
+    @apply w-[60%] justify-center flex flex-row p-2 pt-4 md:pt-10 ;
 }
 
 .descriptionbox{

@@ -2,6 +2,7 @@ import Image from "next/image"
 import s from "./ListingPageCard.module.css"
 import y from "../../public/bottle.jpg"
 import useListingDetails from "../../hooks/useListingDetails"
+import Link from "next/link";
 
 function ListingPageCard({id} : {id:string}) {
 
@@ -20,19 +21,21 @@ function ListingPageCard({id} : {id:string}) {
             <Image  src={data.listing_image_url} className={s.image} width={1000} height={1000} priority alt="listing image" />
         </div>
         <div className={s.interactbox}>
-               
+        <div className={s.listingconditionbox}>
+                    
+                </div>
                 <div className={s.listinginfobox}>
+                    
                 <div className={s.listingtitlebox}>
                
                 <span className={s.listingtitle}>
+                <span className={s.listingcondition}>
+                        {data.listing_condition}
+                    </span>
                     {data.listing_title}
                 </span>
                 </div>
-                <div className={s.listingconditionbox}>
-                    <span className={s.listingcondition}>
-                        {data.listing_condition}
-                    </span>
-                </div>
+                
                 </div>
                 <div className={s.pricebox}>
                 <span className={s.price}>${data.listing_price}</span>
@@ -41,9 +44,9 @@ function ListingPageCard({id} : {id:string}) {
                     <button className={s.inquire}>
                         Inquire
                     </button>
-                    <button className={s.buynow}>
-                        Buy Now
-                    </button>
+                    <Link href={`/profile/${data.username}`} className={s.buynow}>
+                        {data.username + "'s profile"}
+                    </Link>
                 </div>
           
                 

@@ -5,13 +5,15 @@ import Image from "next/image";
 import ProfileItems from "../ProfileItems/ProfileItems";
 import g from "../../public/bottle.jpg"
 import useUserListings from "../../hooks/useUsersListings";
+import useUser from "../../hooks/useUser";
 
 interface User{
     username:string;
 }
 
-function ProfileCard({data}:{data:User}) {
+function ProfileCard({username}:{username:User}) {
 
+    
     let sellingItems = [
         {
             title:"lorem ispsum dole eta it",
@@ -39,10 +41,27 @@ function ProfileCard({data}:{data:User}) {
             image:g
         }
     ]
-   
+    const {data} = useUser()
+    let tempArr = []
+    const sortUsernames = () => {
+        tempArr.push(data.username)
+        tempArr.push(username)
+        console.log(tempArr)
+        tempArr.sort();
+        console.log(tempArr)
+    }
     
+    const handleClickMessage  = async(e) =>{
+        e.preventDefault()
+        try {
+                   
+            
 
-    let seed=data.username
+        } catch (error) {
+            throw new Error
+        }
+    }
+
 
 
   return (
@@ -50,11 +69,11 @@ function ProfileCard({data}:{data:User}) {
         <div className={s.form}>
             <div className={s.topbox}>
             <div className={s.imagebox}>
-            <Image src={`https://avatars.dicebear.com/api/micah/:${seed}.svg`} width={200} height={200} className={s.svg}  alt="potato"/>
+            <Image src={`https://avatars.dicebear.com/api/micah/:${username}.svg`} width={200} height={200} className={s.svg}  alt="potato"/>
             </div>
             <div className={s.textbox}>
             <span className="font-bold text-2xl md:text-3xl">
-                @{data.username}
+                {"@"+username}
             </span>
             </div>
             </div>
@@ -65,14 +84,14 @@ function ProfileCard({data}:{data:User}) {
                     </button>
                 </div>
                 <div className={s.soldbox}>
-                    <button className={s.button}>
+                    <button className={s.button} onClick={()=>sortUsernames()}>
                         Buying
                     </button>
                 </div>
             </div>
             <div className={s.itemsbox}>
                 <ProfileItems
-                username={data.username}
+                username={username}
                 />
             </div>
         </div>

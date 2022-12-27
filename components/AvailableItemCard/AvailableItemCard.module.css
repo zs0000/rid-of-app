@@ -1,0 +1,38 @@
+.container{
+    @apply  h-auto hover:shadow-lg transition-shadow duration-300 rounded-3xl p-1 hover:bg-zinc-200 hover:bg-opacity-30;
+ 
+    
+}
+
+
+
+.imagebox{
+    @apply overflow-hidden rounded-2xl;
+    width: 100%;
+    height: 18vh;
+}
+
+
+.image{
+    @apply rounded-2xl hover:rounded-b-none transform duration-300 hover:scale-110 ;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.titlebox{
+    @apply tracking-tight w-full truncate text-xs mt-1 md:text-sm;
+}
+
+.title{
+    @apply mx-1;
+}
+
+.pricebox{
+    @apply italic text-xs md:text-sm;
+}
+
+.price{
+    @apply  mx-1;
+}
