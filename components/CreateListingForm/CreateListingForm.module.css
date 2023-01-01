@@ -103,9 +103,11 @@
 .buttonbox{
     @apply w-full  flex justify-center;
 }
-
+.disabledbutton{
+    @apply w-full py-4 rounded  font-bold text-zinc-200  bg-[#8d767d];
+}
 .button{
-    @apply w-full py-4 rounded  font-bold text-zinc-200  bg-[#8e3551];
+    @apply w-full py-4 rounded  font-bold text-zinc-200 transition-colors duration-200  bg-[#8e3551];
 }
 
 .svgbox{

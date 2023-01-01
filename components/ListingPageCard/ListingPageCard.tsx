@@ -3,10 +3,13 @@ import s from "./ListingPageCard.module.css"
 import y from "../../public/bottle.jpg"
 import useListingDetails from "../../hooks/useListingDetails"
 import Link from "next/link";
+import useListingInquire from "../../hooks/useListingInquire";
 
-function ListingPageCard({id} : {id:string}) {
-
+function ListingPageCard({id, user} : {id:any, user:any}) {
+    console.log(user)
     const {data,error} = useListingDetails({id});
+
+    
     
   return (
     <>
@@ -41,7 +44,7 @@ function ListingPageCard({id} : {id:string}) {
                 <span className={s.price}>${data.listing_price}</span>
             </div>
                 <div className={s.buttonsbox}>
-                    <button className={s.inquire}>
+                    <button onClick={()=> inquireDetails.mutate()} className={s.inquire}>
                         Inquire
                     </button>
                     <Link href={`/profile/${data.username}`} className={s.buynow}>

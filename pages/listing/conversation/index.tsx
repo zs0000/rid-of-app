@@ -1,10 +1,13 @@
+import ProtectedWrapper from "../../../components/ProtectedWrapper/ProtectedWrapper"
 import s from "./ConversationPage.module.css"
 
 function ConversationPage() {
   return (
-    <div className={s.container}>
-        
-    </div>
+    <ProtectedWrapper>
+        <div className={s.container}>
+          <ConversationPage/>
+        </div>
+    </ProtectedWrapper>
   )
 }
 

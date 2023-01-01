@@ -10,12 +10,14 @@ function ListingPage() {
     const router = useRouter()
     const {id} = router.query
 
-    const{data,error} = useUser()
+    const{data, isLoading,error} = useUser()
+    
+
    
 
   return (
     <div className={s.container}>
-        <ListingPageCard id={id}/>
+       {isLoading ? <></> :  <ListingPageCard user={data} id={id}/> }
         
     </div>
   )

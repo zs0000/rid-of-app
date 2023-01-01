@@ -236,7 +236,7 @@ function CreateListingForm({data}) {
                         </button> : <></> }
                     </div>
                     <div className={s.buttonbox}>
-                        <button onClick={()=> listingMutation.mutate()} className={s.button}>
+                        <button onClick={()=> listingMutation.mutate()} disabled={postingImage == "uploaded" && listingData.listing_title && listingData.listing_category && listingData.listing_condition && listingData.listing_description && listingData.listing_price ? false : true} className={postingImage == "uploaded" && listingData.listing_title && listingData.listing_category && listingData.listing_condition && listingData.listing_description && listingData.listing_price ?s.button : s.disabledbutton}>
                             Create
                         </button>
                     </div>
