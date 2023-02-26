@@ -78,8 +78,8 @@ function CreateListingForm({data}) {
                         <div className={s.conditionbox}>
                             <select onChange={(e)=> setListingData({
                                 listing_condition:e.target.value
-                            })} className={s.conditionselect}  placeholder="Choose item condition.">
-                                <option  className={s.disabledoption} selected disabled >
+                            })} className={s.conditionselect} value={listingData.listing_condition.length > 1 ? listingData.listing_condition : "Item condition"} placeholder="Choose item condition.">
+                                <option value="Item condition"  className={s.disabledoption}  disabled >
                                 Item condition.
                                 </option>
                                 <option value="Used" className={s.option}>
@@ -97,10 +97,10 @@ function CreateListingForm({data}) {
                             </select>
                         </div>
                         <div className={s.category}>
-                            <select className={s.categoryselect} onChange={(e)=> setListingData({
+                            <select className={s.categoryselect} value={listingData.listing_category.length > 0 ? listingData.listing_category : "Item category"} placeholder="Choose item category." onChange={(e)=> setListingData({
                                 listing_category:e.target.value
                             })}>
-                                <option  className={s.disabledoption} selected disabled >
+                                <option value="Item category" className={s.disabledoption}   disabled >
                                 Item category.
                                 </option>
                                 <option  value="Electronics & Media" className={s.option}>
@@ -154,7 +154,7 @@ function CreateListingForm({data}) {
                         <input
                         type="checkbox"
                         className={s.pickup}
-                        value={localSelected}
+                        value={localSelected.toString()}
                         onChange={(e)=> {
                             setLocalSelected(!localSelected)
                             setListingData({
@@ -216,7 +216,7 @@ function CreateListingForm({data}) {
                 </div>
                 <div className={s.picturebox}>
                     <div className={s.svgbox}>
-                    { postingImage == "uploaded" ? <Image src={imageUrl} alt="listing photo" width={500} height={500} className={s.image} /> :<BsCameraFill className={s.svg} onClick={(e)=> handleImageSelect(e)}/>}
+                    { postingImage == "uploaded" ? <Image src={imageUrl ? imageUrl : ""} alt="listing photo" width={500} height={500} className={s.image} /> :<BsCameraFill className={s.svg} onClick={(e)=> handleImageSelect(e)}/>}
                     </div>
                 </div>
                 <div className={s.bottombox}>
@@ -244,7 +244,7 @@ function CreateListingForm({data}) {
                     type="file"
                     id="file_input"
                     onChange={(e)=> {
-                        if(e.target.files[0]){
+                        if(e.target.files?.[0]){
                             setPostingImage("uploading")
                         formData.append("file", e.target.files[0])
                         handleImageUpload(e)
