@@ -1,10 +1,10 @@
 .card{
-    @apply  border border-zinc-200 border-opacity-60 m-[0.25rem] h-[25vh] hover:cursor-pointer;
+    @apply  border border-gray-300 border-opacity-60 rounded-xl  m-[0.15rem] h-[30vh] md:h-[20vh] hover:cursor-pointer;
     
 }
 
 .imagebox{
-    @apply w-[100%]  h-[100%];
+    @apply w-[100%]  h-[100%] rounded-xl;
 }
 
 .textbox{
@@ -20,6 +20,7 @@
 }
 
 .image{
+    @apply rounded-xl transform duration-300 hover:scale-105;
     width: 100%;
     height: 100%;
     object-fit: cover;

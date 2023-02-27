@@ -1,5 +1,5 @@
 .container{
-    @apply w-full md:w-[90%] lg:w-[62%] xl:w-[50%] min-h-[100vh] h-full flex flex-col items-center border ;
+    @apply w-full md:w-[90%] lg:w-[62%] xl:w-[50%] min-h-[100vh] h-full flex flex-col bg-[#f8f8f8] items-center border;
 }
 
 .titlebar {
@@ -43,7 +43,7 @@
 }
 
 .listingtitle{
-    @apply  font-bold w-[100%] tracking-tight text-xl md:text-3xl  mr-4 text-black;
+    @apply  font-bold w-[100%] tracking-tight text-xl md:text-2xl  mr-4 text-black;
 }
 
 .categorybox{

@@ -34,5 +34,5 @@
 }
 
 .price{
-    @apply  mx-1;
+    @apply  mx-1 text-green-600 font-bold;
 }

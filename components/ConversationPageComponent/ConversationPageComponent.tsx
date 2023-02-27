@@ -1,9 +1,67 @@
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import useConversationDetails from "../../hooks/useConversationDetails";
 import s from "./ConversationPageComponent.module.css"
 
-function ConversationPageComponent() {
+
+
+
+function ConversationPageComponent({user, conversationId}:{user:string,conversationId:number}) {
+  const {data,error} = useConversationDetails({conversationId, user});
+  const router = useRouter()
+
+  const [showMessages, setShowMessages] = useState(false);
+  useEffect(() => {
+    if (error) {
+      // Handle error
+      console.log(error);
+    } else if (data?.authenticated == false) {
+      // User is not authorized, redirect to dashboard
+      console.log(":hi")
+      router.push("/dashboard");
+    } else if ( data?.authenticated == true){
+      setShowMessages(true)
+    }
+  }, [data, error, router]);
+  console.log(data)
   return (
     <div className={s.container}>
-        hi
+      <div className={s.conversation}>
+        
+          <div className={s.itemcontainer}>
+            <div className={s.itemsellercontainer}>
+              <div className={s.itemsellerimagecontainer}>
+               
+              </div>
+              <div className={s.itemsellerusernamecontainer}>
+                <span className={s.itemsellerusername}>
+
+                </span>
+              </div>
+            </div>
+            <div className={s.iteminfocontainer}>
+              <div className={s.itemtitlecontainer}>
+                <span className={s.itemtitle}>
+
+                </span>
+              </div>
+              <div className={s.itempricecontainer}>
+                <span className={s.itemprice}>
+
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className={s.messagescontainer}>
+              {showMessages ? <span>
+                Messages
+              </span> 
+              :
+              <>
+              </>  
+            }
+          </div>
+      </div>
     </div>
   )
 }

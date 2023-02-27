@@ -1,0 +1,7 @@
+.container{
+    @apply w-full h-full flex flex-col items-center border-b ;
+}
+
+.conversation{
+    @apply w-[90%] h-full flex flex-col items-center;
+}

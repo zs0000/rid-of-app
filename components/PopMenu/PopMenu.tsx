@@ -27,7 +27,7 @@ function PopMenu() {
           </Link>
           </div>
           <div className={s.itembox}>
-          <Link className={s.item} href="/available/">
+          <Link className={s.item} href="/available/1">
             Available
           </Link>
           </div>

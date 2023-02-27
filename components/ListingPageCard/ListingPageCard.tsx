@@ -4,11 +4,31 @@ import y from "../../public/bottle.jpg"
 import useListingDetails from "../../hooks/useListingDetails"
 import Link from "next/link";
 import useListingInquire from "../../hooks/useListingInquire";
+import useUser from "../../hooks/useUser";
+import { useRouter } from "next/router";
+
 
 function ListingPageCard({id, user} : {id:any, user:any}) {
     console.log(user)
+    
     const {data,error} = useListingDetails({id});
+                        
+    let conversationObj= {
+        listing_id:data?.id,
+        sender: user?.id,
+        receiver: data?.user_id,
+        
+    }
+    const router = useRouter()
 
+    const handleInquireSuccess = (data) => {
+      if (data.redirect) {
+        router.push(`/conversation/${data.data[0].id}`);
+      }
+    }
+  
+    const inquireMutation = useListingInquire(conversationObj, { onSuccess: handleInquireSuccess })
+    
     
     
   return (
@@ -44,7 +64,10 @@ function ListingPageCard({id, user} : {id:any, user:any}) {
                 <span className={s.price}>${data.listing_price}</span>
             </div>
                 <div className={s.buttonsbox}>
-                    <button onClick={()=> inquireDetails.mutate()} className={s.inquire}>
+                    <button onClick={()=> 
+
+    
+                        inquireMutation.mutate()} className={s.inquire}>
                         Inquire
                     </button>
                     <Link href={`/profile/${data.username}`} className={s.buynow}>

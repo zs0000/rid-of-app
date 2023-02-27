@@ -1,9 +1,9 @@
 .container{
-    @apply w-screen h-full min-h-[90vh] flex flex-col items-center pt-[6.5vh] ;
+    @apply w-screen h-full min-h-[90vh] flex flex-col items-center pt-[6.5vh] bg-slate-200;
 }
 
 .form{
-    @apply w-full md:w-[90%] lg:w-[62%] xl:w-[50%] h-full  md:border md:border-t-0 p-2 ;
+    @apply w-full md:w-[90%] lg:w-[62%] xl:w-[50%] h-full  md:border md:border-t-0 p-2 bg-gray-50;
 }
 
 .topbox{
@@ -20,8 +20,6 @@
 .button{
     @apply text-xl text-gray-400 hover:text-black transition-colors duration-300  tracking-tighter;
 }
-
-
 
 .textbox{
     @apply w-full flex justify-center;

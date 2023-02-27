@@ -42,14 +42,7 @@ function ProfileCard({username}:{username:User}) {
         }
     ]
     const {data} = useUser()
-    let tempArr = []
-    const sortUsernames = () => {
-        tempArr.push(data.username)
-        tempArr.push(username)
-        console.log(tempArr)
-        tempArr.sort();
-        console.log(tempArr)
-    }
+
     
     const handleClickMessage  = async(e) =>{
         e.preventDefault()
@@ -85,7 +78,7 @@ function ProfileCard({username}:{username:User}) {
                 </div>
                 <div className={s.soldbox}>
                     <button className={s.button} onClick={()=>sortUsernames()}>
-                        Buying
+                        Reviews
                     </button>
                 </div>
             </div>
