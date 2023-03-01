@@ -1,0 +1,15 @@
+.container{
+    @apply w-full flex flex-row ;
+}
+
+.textarea{
+    @apply w-full border h-[13vh] focus:outline-none  border-r-0   resize-none bg-gray-100 hover:bg-white duration-200 delay-75 transition-colors focus:bg-white; 
+}
+
+.buttoncontainer{
+    @apply w-[12%] h-[13vh] flex justify-center items-center border hover:font-bold duration-200 ;
+}
+
+.button{
+    @apply w-full h-full;
+}

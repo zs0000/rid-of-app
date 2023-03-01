@@ -27,6 +27,11 @@ function PopMenu() {
           </Link>
           </div>
           <div className={s.itembox}>
+          <Link className={s.item} href="/inbox">
+            Inbox
+          </Link>
+          </div>
+          <div className={s.itembox}>
           <Link className={s.item} href="/available/1">
             Available
           </Link>
@@ -35,6 +40,7 @@ function PopMenu() {
           <Link className={s.item} href="/create-listing">
             List item
           </Link>
+          
           </div>
         </div>
       </div>

@@ -9,9 +9,10 @@ const conversationDetails = async({conversationId,user}:{conversationId:number,u
     .select()
     .eq("id",conversationId)
     .single()
+    let messages =[]
     if(data ==  null){
   
-        return {a:1,d:2,authenticated:false}
+        return {a:1,d:2,authenticated:false, messages}
     } 
     const listingDetails = await supabase
     .from("listings")
@@ -23,12 +24,13 @@ const conversationDetails = async({conversationId,user}:{conversationId:number,u
     if(data.sender == user || data.receiver ==user){
         x=true        
     }
-    let messages ={}
+   
     if(x=true){
         messages = await supabase
         .from("conversation_messages")
         .select("*")
         .eq("conversation_id", conversationId)
+        console.log(messages)
     }
     
     let retObj = {

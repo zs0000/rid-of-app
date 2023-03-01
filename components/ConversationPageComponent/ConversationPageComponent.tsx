@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import useConversationDetails from "../../hooks/useConversationDetails";
+import ConversationInput from "../ConversationInput/ConversationInput";
 import s from "./ConversationPageComponent.module.css"
 
 
@@ -9,8 +10,8 @@ import s from "./ConversationPageComponent.module.css"
 function ConversationPageComponent({user, conversationId}:{user:string,conversationId:number}) {
   const {data,error} = useConversationDetails({conversationId, user});
   const router = useRouter()
-
   const [showMessages, setShowMessages] = useState(false);
+  const [messages, setMessages] = useState([])
   useEffect(() => {
     if (error) {
       // Handle error
@@ -21,8 +22,10 @@ function ConversationPageComponent({user, conversationId}:{user:string,conversat
       router.push("/dashboard");
     } else if ( data?.authenticated == true){
       setShowMessages(true)
+      setMessages(data.messages.data)
     }
   }, [data, error, router]);
+  
   console.log(data)
   return (
     <div className={s.container}>
@@ -53,14 +56,26 @@ function ConversationPageComponent({user, conversationId}:{user:string,conversat
             </div>
           </div>
           <div className={s.messagescontainer}>
-              {showMessages ? <span>
-                Messages
-              </span> 
+           
+            {showMessages ? messages.map((message)=>(
+                <div key={message.id} className={message.author == user ? s.mymessagecontainer : s.othermessagecontainer}>
+                  <div className={message.author == user ? s.mymessage : s.othermessage}>
+                    {message.message_text}
+                  </div>
+                </div>
+              ))
               :
               <>
+              no message
               </>  
             }
+       
+              
+            
           </div>
+          <div className={s.inputcontainer}>
+              <ConversationInput user={user} conversationId={conversationId} />
+            </div>
       </div>
     </div>
   )

@@ -1,0 +1,30 @@
+.hide{
+    @apply hidden;
+}
+
+.container{
+    @apply w-full flex flex-row h-[10vh] shadow-sm transition-colors duration-200 hover:bg-white hover:cursor-pointer border border-gray-100 my-1 rounded bg-zinc-50;
+}
+
+.authorimage{
+    @apply h-[9vh]  p-1 flex justify-center;
+}
+
+.svg{
+    @apply bg-gradient-to-tr from-rose-300 via-gray-200 to-slate-400 rounded border border-zinc-300;
+    width:100%;
+    height:100%;
+}
+
+.messageinfo{
+    @apply w-full;
+}
+
+.listingtitlecontainer{
+    @apply m-1 font-bold;
+}
+
+.listingmessagecontainer{
+    @apply mx-2 max-w-prose truncate h-full max-h-[7vh];
+    font-size: 0.9rem;
+}

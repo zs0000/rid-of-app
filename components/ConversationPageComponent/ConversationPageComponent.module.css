@@ -3,5 +3,33 @@
 }
 
 .conversation{
-    @apply w-[90%] h-full flex flex-col items-center;
+    @apply w-[90%] h-full  flex flex-col items-center  ;
+}
+
+.messagescontainer{
+    @apply flex flex-col w-[90%] h-full gap-2 p-2 overflow-y-scroll;
+}
+
+.inputcontainer{
+    @apply w-full py-2 flex flex-col items-end justify-end ;
+}
+
+.mymessage{
+    @apply bg-green-100 w-[55%] p-4 rounded shadow;
+}
+
+.othermessage{
+    @apply bg-blue-100 w-[55%] p-4 rounded shadow;
+}
+
+.mymessagecontainer{
+    @apply w-full flex justify-end;
+}
+
+.othermessagecontainer{
+    @apply w-full flex justify-start;
+}
+
+.message {
+    @apply w-full;
 }
