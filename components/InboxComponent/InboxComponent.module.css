@@ -1,0 +1,12 @@
+.container {
+    @apply w-[80%] md:w-[90%] lg:w-[60%] xl:w-[50%] bg-zinc-100 px-2 h-full pt-16;
+}
+
+.messagecard {
+    @apply w-full ;
+}
+
+.conversation{
+    @apply w-full h-[45vh] ;
+}
+

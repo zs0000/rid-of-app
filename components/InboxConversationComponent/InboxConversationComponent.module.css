@@ -1,0 +1,29 @@
+.mymessage{
+    @apply bg-green-100 w-[45%] p-4 rounded shadow;
+}\
+    @apply bg-blue-100 w-[45%] p-4 rounded shadow;
+}
+
+.mymessagecontainer{
+    @apply w-full flex justify-end;
+}
+
+.othermessagecontainer{
+    @apply w-full flex justify-start;
+}
+
+.message {
+    @apply w-full;
+}
+.container{
+    @apply w-full h-full;
+}
+
+.messagescontainer{
+    @apply w-full h-[90%] overflow-y-scroll;
+}
+
+
+.inputcontainer{
+    @apply w-full v ;
+}
