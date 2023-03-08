@@ -19,6 +19,12 @@ function PaginatedListings({pageNumber}:{pageNumber:number}) {
     }
   }
 
+  let tempArr:number[] =[]
+  let tempVal = paginatedListings.data?.maxPageNumber
+  for(let i = 0; i< tempVal; i++){
+    tempArr.push(i+1)
+  }
+
     
     return (
     <div className={s.container}>
@@ -82,6 +88,19 @@ function PaginatedListings({pageNumber}:{pageNumber:number}) {
         fetching..
         </>
         }
+        <div className={s.pageselectbar}>
+            
+      <div className={s.pageselect}>
+        {paginatedListings ? tempArr.map((item)=>(
+          <Link href={`/available/${item}`} className={s.pagenumber} key={item}>
+            {item}
+          </Link>
+        ))
+          :
+          <>no</>
+      }
+      </div>
+    </div>
     </div>
   )
 }

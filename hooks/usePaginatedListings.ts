@@ -6,7 +6,7 @@ interface PaginatedListings{
     listings:Array<Object>;
     count: number;
     pageNumber:number;
-    
+    maxPageNumber:number
 }
 
 const paginatedListings = async({pageNumber}:{pageNumber:number}): Promise<PaginatedListings> => {
@@ -15,6 +15,7 @@ const paginatedListings = async({pageNumber}:{pageNumber:number}): Promise<Pagin
    
     const offset = (pageNumber - 1) * pageSize;
     const upperRange = offset + pageSize - 1
+    const maxPageNumber = Math.ceil(count / pageSize);
     console.log(" hi "  + upperRange + "lol" + offset + "good" +  pageNumber)
     if( upperRange > count){
         const { data, error } = await supabase
@@ -29,6 +30,7 @@ const paginatedListings = async({pageNumber}:{pageNumber:number}): Promise<Pagin
         listings: data || [],
         count: count || 0,
         pageNumber,
+        maxPageNumber
       };
     } else{
         const { data, error } = await supabase
@@ -43,6 +45,7 @@ const paginatedListings = async({pageNumber}:{pageNumber:number}): Promise<Pagin
         listings: data || [],
         count: count || 0,
         pageNumber,
+        maxPageNumber
       };
     }
    

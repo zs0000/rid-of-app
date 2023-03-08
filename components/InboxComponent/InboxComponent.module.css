@@ -1,5 +1,5 @@
 .container {
-    @apply w-[80%] md:w-[90%] lg:w-[60%] xl:w-[50%] bg-zinc-100 px-2 h-full pt-16;
+    @apply w-[80%] md:w-[90%] lg:w-[60%] xl:w-[50%] px-2 h-full pt-16 flex md:flex-row flex-col;
 }
 
 .messagecard {
@@ -7,6 +7,13 @@
 }
 
 .conversation{
-    @apply w-full h-[45vh] ;
+    @apply w-full  h-[50vh] md:h-[80vh] ;
 }
 
+.messages{
+    @apply w-full  my-1;
+}
+
+.firstcontainer{
+    @apply w-full md:w-[30vw] lg:w-[22vw] xl:w-[18vw] md:pr-1  ;
+}

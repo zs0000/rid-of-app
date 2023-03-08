@@ -9,12 +9,20 @@ const userMessages = async({user}: {user:string}) =>{
     .from("listing_conversations")
     .select("*")
     .eq("receiver", user)
-    console.log(data)
 
-    if(error){
-        console.log(error)
+    const conversationsStarted = await supabase
+    .from("listing_conversations")
+    .select("*")
+    .eq("sender", user)
+
+    let retObj = {
+        conversationsStarted: conversationsStarted,
+        conversationsReceived: data
     }
-    return data
+    console.log(conversationsStarted)
+
+   
+    return retObj
 }
 
 export default function useUserMessages({user}:{user:string} ){

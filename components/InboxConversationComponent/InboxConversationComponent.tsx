@@ -5,10 +5,14 @@ import ConversationInput from "../ConversationInput/ConversationInput"
 
 function InboxConversationComponent({conversation, user}) {
 
+console.log(conversation)
+
+
 
 
   return (
     <div className={s.container}>
+      
         <div className={s.messagescontainer}>
            
             {conversation[0] ? conversation.map((message)=>(
@@ -30,7 +34,7 @@ function InboxConversationComponent({conversation, user}) {
             
           </div>
           {conversation[0] ? <div className={s.inputcontainer}>
-              <ConversationInput user={user} conversationId={conversation} />
+              <ConversationInput user={user} conversationId={conversation[0].conversation_id} />
             </div> : <></>}
     </div>
   )

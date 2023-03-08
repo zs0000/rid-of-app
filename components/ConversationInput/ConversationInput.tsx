@@ -12,6 +12,8 @@ function ConversationInput({user,  conversationId}:{user:string,conversationId:n
         message_text:messageText
     }
     const sendMessage = useSendMessage(messageData)
+
+    console.log(messageData)
   return (
     <div className={s.container}>
         

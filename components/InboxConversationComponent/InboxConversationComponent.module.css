@@ -1,6 +1,8 @@
 .mymessage{
     @apply bg-green-100 w-[45%] p-4 rounded shadow;
-}\
+}
+
+.othermessage{
     @apply bg-blue-100 w-[45%] p-4 rounded shadow;
 }
 
@@ -16,14 +18,18 @@
     @apply w-full;
 }
 .container{
-    @apply w-full h-full;
+    @apply w-full  h-full;
+}
+
+.conversationinfo{
+    @apply w-full  h-[5vh] bg-zinc-100 my-1;
 }
 
 .messagescontainer{
-    @apply w-full h-[90%] overflow-y-scroll;
+    @apply w-full h-[90%] overflow-y-scroll pt-1 ;
 }
 
 
 .inputcontainer{
-    @apply w-full v ;
+    @apply w-full py-1;
 }

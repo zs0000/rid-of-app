@@ -1,3 +1,7 @@
 .container{
     @apply w-full h-full grid grid-cols-2 md:grid-cols-3 gap-2;
 }
+
+.pageselectbar{
+    @apply w-full bg-black;
+}

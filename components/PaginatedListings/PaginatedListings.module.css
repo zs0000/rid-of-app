@@ -26,3 +26,15 @@
 .itemcontainer{
     @apply w-[80%] h-full grid grid-cols-2;
 }
+
+.pageselectbar{
+    @apply w-full flex justify-center pt-2;
+}
+
+.pageselect{
+    @apply flex flex-row gap-2;
+}
+
+.pagenumber{
+    @apply underline ;
+}

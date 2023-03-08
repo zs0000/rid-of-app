@@ -1,8 +1,12 @@
 import AvailableItemCard from "../AvailableItemCard/AvailableItemCard"
 import s from "./AvailableItems.module.css"
-
+import {useEffect} from 'react'
 function AvailableItems({listingItems}) {
     console.log(listingItems)
+
+  
+    
+    
   return (
     <div className={s.container}>
        
@@ -17,6 +21,7 @@ function AvailableItems({listingItems}) {
           </span>
         </>    
     }
+    
     </div>
   )
 }

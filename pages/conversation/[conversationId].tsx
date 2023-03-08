@@ -14,7 +14,7 @@ function conversationId() {
     <ProtectedWrapper>
         {!isLoading ? 
         <div className={s.container}>
-        <ConversationPageComponent user={data.id}  conversationId={Number(conversationId)}/>
+        <ConversationPageComponent user={data?.id}  conversationId={Number(conversationId)}/>
     </div>
      : 
      <>
