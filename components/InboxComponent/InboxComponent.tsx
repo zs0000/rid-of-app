@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import useConversation from "../../hooks/useConversation"
 import useUserMessages from "../../hooks/useUserMessages"
 import { supabase } from "../../utils/supabaseClient"
 import InboxConversationComponent from "../InboxConversationComponent/InboxConversationComponent"
@@ -9,28 +10,32 @@ function InboxComponent({user}:{user:string}) {
     const [startedConversations, setStartedConversation] = useState([])
     const {data, error} = useUserMessages({user})
     const [conversation, setConversation] = useState([])
+    const [conversationId, setConversationId] = useState<Number>(0)
+    const [conversationSelected, setConversationSelected] = useState<Boolean>(false);
     useEffect(()=>{
         if(data){
             setMessages(data.conversationsReceived)
             if(data.conversationsStarted.data){
             setStartedConversation(data.conversationsStarted.data)
-            console.log(startedConversations)
+          
             }
         }
     },[data])
-    console.log(user)
-
+  
+    const gg = useConversation({user})
+   
     async function handleConversationSelect(message){
         try {
 
-            console.log(message)
+           
            const {data,error} = await supabase
            .from("conversation_messages")
            .select("*")
            .eq("conversation_id",message.id)
-           console.log(data)
+          
            setConversation(data)
-            
+            setConversationId(message.id)
+            setConversationSelected(true)
            console.log(data)
           
 
@@ -66,7 +71,7 @@ function InboxComponent({user}:{user:string}) {
         </div>
         </div>
         <div className={s.conversation}>
-            <InboxConversationComponent user={user} conversation={conversation}/>
+           {conversationSelected ?  <InboxConversationComponent conversationId={conversationId} user={user} conversation={conversation}/> : <></>}
         </div>
     </div>
   )

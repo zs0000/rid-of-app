@@ -33,3 +33,35 @@
 .inputcontainer{
     @apply w-full py-1;
 }
+
+
+.infobar{
+    @apply w-full flex flex-row p-1 bg-zinc-100 bg-opacity-60 rounded-lg rounded-b-none;
+}
+
+.left{
+    @apply w-[75%];
+}
+
+.acceptcontainer {
+    @apply bg-zinc-100 p-1 text-center;
+}
+.profilecontainer{
+    @apply bg-zinc-300 p-1 text-center;
+}
+
+.offercontainer{
+    @apply  w-[40%] flex justify-center items-center;
+}
+
+.offer{
+    @apply tracking-tighter text-green-600 text-xl;
+}
+
+.right{
+    @apply w-[25%]  flex flex-row;
+}
+
+.controls{
+    @apply flex flex-col gap-1  text-xs;
+}

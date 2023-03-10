@@ -13,7 +13,6 @@ function ConversationInput({user,  conversationId}:{user:string,conversationId:n
     }
     const sendMessage = useSendMessage(messageData)
 
-    console.log(messageData)
   return (
     <div className={s.container}>
         
