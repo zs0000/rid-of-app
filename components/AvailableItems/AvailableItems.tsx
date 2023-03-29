@@ -11,9 +11,14 @@ function AvailableItems({listingItems}) {
     <div className={s.container}>
        
         {listingItems ? 
-        listingItems.data?.listings.map((availableItem)=>(
-            <AvailableItemCard key={availableItem.listing_image_url} availableItem={availableItem} />
-        ))
+        listingItems.data?.listings.map((availableItem)=>{
+          console.log(availableItem)
+          if(availableItem.listing_status == "closed"){
+            return <></>
+          } else{
+            return <AvailableItemCard key={availableItem.listing_image_url} availableItem={availableItem} />
+          }
+        })
         :
         <>
           <span className="w-full h-full ">

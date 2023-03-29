@@ -4,23 +4,29 @@ import useUserMessages from "../../hooks/useUserMessages"
 import { supabase } from "../../utils/supabaseClient"
 import InboxConversationComponent from "../InboxConversationComponent/InboxConversationComponent"
 import InboxPreviewCard from "../InboxPreviewCard/InboxPreviewCard"
+import Loader from "../Loader/Loader"
 import s from "./InboxComponent.module.css"
 function InboxComponent({user}:{user:string}) {
     const [messages, setMessages] = useState([])
     const [startedConversations, setStartedConversation] = useState([])
-    const {data, error} = useUserMessages({user})
+    const {data, isLoading, error} = useUserMessages({user})
     const [conversation, setConversation] = useState([])
     const [conversationId, setConversationId] = useState<Number>(0)
     const [conversationSelected, setConversationSelected] = useState<Boolean>(false);
+    
+    const [conversationsLoaded, setConversationsLoaded] = useState<Boolean>(false);
     useEffect(()=>{
         if(data){
-            setMessages(data.conversationsReceived)
-            if(data.conversationsStarted.data){
-            setStartedConversation(data.conversationsStarted.data)
-          
-            }
+            
+            setMessages(data?.conversationsReceived)
+            
+            setStartedConversation(data?.conversationsStarted)
+            
+            setConversationsLoaded(true)
+            console.log(data)
+            console.log(startedConversations)
         }
-    },[data])
+    },[data, isLoading])
   
     const gg = useConversation({user})
    
@@ -45,6 +51,11 @@ function InboxComponent({user}:{user:string}) {
             console.error(err.message)
         }
     }
+
+if(isLoading){
+    return <Loader></Loader>
+}
+
   return (
     <div className={s.container}>
         
@@ -53,7 +64,7 @@ function InboxComponent({user}:{user:string}) {
             <span>
                 Selling
             </span>
-        {messages ? messages.map((message)=>(
+        {conversationsLoaded ? messages.map((message)=>(
             <div className={s.messagecard} key={message.id} onClick={()=>handleConversationSelect(message)}>
                 <InboxPreviewCard conversationId={Number(message.id)} listingId={Number(message.listing_id)} sender={message.sender} />
             </div>
@@ -63,7 +74,7 @@ function InboxComponent({user}:{user:string}) {
         <span>
                 Buying
             </span>
-        {messages ? startedConversations.map((message)=>(
+        {conversationsLoaded ? startedConversations.map((message)=>(
             <div className={s.messagecard} key={message.id} onClick={()=>handleConversationSelect(message)}>
                 <InboxPreviewCard conversationId={Number(message.id)} listingId={Number(message.listing_id)} sender={message.sender} />
             </div>
@@ -71,7 +82,14 @@ function InboxComponent({user}:{user:string}) {
         </div>
         </div>
         <div className={s.conversation}>
-           {conversationSelected ?  <InboxConversationComponent conversationId={conversationId} user={user} conversation={conversation}/> : <></>}
+           {conversationSelected ?  <InboxConversationComponent conversationId={conversationId} user={user} conversation={conversation}/> : 
+           <div className="w-full h-full flex justify-center items-center border-r md:border-l-0 border-l border-b">
+            <div className={s.middle}>
+                <span className="tracking-tighter text-gray-500">
+                    No conversation.
+                </span>
+            </div>
+            </div>}
         </div>
     </div>
   )

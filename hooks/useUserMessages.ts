@@ -16,7 +16,7 @@ const userMessages = async({user}: {user:string}) =>{
     .eq("sender", user)
 
     let retObj = {
-        conversationsStarted: conversationsStarted,
+        conversationsStarted: conversationsStarted.data,
         conversationsReceived: data
     }
     console.log(conversationsStarted)

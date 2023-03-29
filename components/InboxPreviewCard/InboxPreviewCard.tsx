@@ -5,10 +5,20 @@ import s from "./InboxPreviewCard.module.css"
 
 function InboxPreviewCard({conversationId,listingId,sender}:{conversationId:number,listingId:number,sender:string}) {
   
-    const {data,error} = useMessagePreview({conversationId, listingId, sender})
+    const {data, isLoading,error} = useMessagePreview({conversationId, listingId, sender})
     const router = useRouter()
     function handleClickConversation(e:Event){
         router.push(`/conversation/${conversationId}`)
+    }
+
+    if(isLoading){
+      return(
+        <div className={s.loadingcontainer}>
+            <div className={s.loadingauthorcard}>
+          
+        </div>
+        </div>
+      )
     }
 
     return (

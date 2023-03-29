@@ -1,5 +1,5 @@
 .container{
-    @apply w-full md:w-[90%] lg:w-[62%] xl:w-[50%] min-h-[100vh] h-full flex flex-col bg-[#f8f8f8] items-center border;
+    @apply w-full md:w-[90%] lg:w-[62%] xl:w-[50%] min-h-[100vh] h-full flex flex-col bg-white items-center border;
 }
 
 .titlebar {
@@ -15,7 +15,7 @@
 }
 
 .imagebox{
-    @apply w-full md:max-w-[500px] flex justify-center md:justify-start bg-zinc-100 h-full;
+    @apply w-full md:max-w-[500px] flex justify-center md:justify-start  h-full;
 }
 .infobox{
     @apply w-full flex flex-row justify-end ;
@@ -55,7 +55,7 @@
 }
 
 .listingcondition{
-    @apply  bg-zinc-200 w-[68px] justify-center items-center flex h-[24px] rounded-lg tracking-tighter text-xs font-semibold ;
+    @apply  bg-zinc-200 bg-opacity-60 w-[68px] justify-center items-center flex h-[24px] rounded-lg tracking-tighter text-xs font-semibold ;
 }
 
 .pricebox{
@@ -71,7 +71,7 @@
 }
 
 .descriptionbox{
-    @apply w-full flex flex-row p-2 bg-zinc-100;
+    @apply w-full flex flex-row p-2 bg-zinc-200 bg-opacity-60;
 }
 
 .description{

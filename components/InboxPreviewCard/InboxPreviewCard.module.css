@@ -6,6 +6,13 @@
     @apply w-full  flex flex-row h-[10vh]  shadow-sm transition-colors duration-200 hover:bg-white hover:cursor-pointer border border-gray-100 my-1 rounded bg-zinc-50;
 }
 
+.loadingcontainer{
+    @apply w-full  flex flex-row h-[10vh] animate-pulse shadow-sm transition-colors duration-200 hover:bg-white hover:cursor-pointer border border-gray-100 my-1 rounded bg-zinc-50;
+}
+.loadingauthorcard{
+    @apply min-w-[125vw] md:min-w-[210vw] lg:min-w-[125vw] xl:min-w-[124vw];
+}
+
 .authorcard{
     @apply min-w-[15vw] md:min-w-[8vw] lg:min-w-[5vw] xl:min-w-[4vw];
 }

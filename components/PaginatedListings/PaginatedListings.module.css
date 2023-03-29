@@ -1,5 +1,5 @@
 .container{
-    @apply w-full md:w-[90%] lg:w-[62%] xl:w-[50%] pt-[6vh] min-h-screen flex flex-col items-center border p-1;
+    @apply w-full md:w-[90%] lg:w-[62%] xl:w-[50%] pt-[6vh] bg-white min-h-screen flex flex-col items-center border p-1;
 }
 
 .categorybar{

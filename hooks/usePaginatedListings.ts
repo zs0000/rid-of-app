@@ -7,6 +7,7 @@ interface PaginatedListings{
     count: number;
     pageNumber:number;
     maxPageNumber:number
+
 }
 
 const paginatedListings = async({pageNumber}:{pageNumber:number}): Promise<PaginatedListings> => {
@@ -20,7 +21,7 @@ const paginatedListings = async({pageNumber}:{pageNumber:number}): Promise<Pagin
     if( upperRange > count){
         const { data, error } = await supabase
         .from('listings')
-        .select('id, listing_title, listing_price, listing_image_url')
+        .select('id, listing_title, listing_price, listing_image_url, listing_status')
         .range(offset, count -1);
       if (error) {
         console.error(error);
@@ -35,7 +36,7 @@ const paginatedListings = async({pageNumber}:{pageNumber:number}): Promise<Pagin
     } else{
         const { data, error } = await supabase
         .from('listings')
-        .select('id, listing_title, listing_price, listing_image_url')
+        .select('id, listing_title, listing_price, listing_image_url, listing_status')
         .range(offset, offset + pageSize - 1);
       if (error) {
         console.error(error);
@@ -46,6 +47,7 @@ const paginatedListings = async({pageNumber}:{pageNumber:number}): Promise<Pagin
         count: count || 0,
         pageNumber,
         maxPageNumber
+
       };
     }
    

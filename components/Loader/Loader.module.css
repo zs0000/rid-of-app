@@ -1,0 +1,6 @@
+.container{
+    @apply w-screen h-screen bg-white flex justify-center items-center;
+}
+.loading{
+    @apply text-xl animate-pulse;
+}

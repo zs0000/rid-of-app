@@ -1,17 +1,17 @@
 .mymessage{
-    @apply bg-green-100 w-[45%] p-4 rounded shadow;
+    @apply bg-[#87a6d04a] w-[45%] p-4 rounded shadow;
 }
 
 .othermessage{
-    @apply bg-blue-100 w-[45%] p-4 rounded shadow;
+    @apply bg-[#F0EBD8] w-[45%] p-4 rounded shadow;
 }
 
 .mymessagecontainer{
-    @apply w-full flex justify-end;
+    @apply w-full flex flex-col items-end;
 }
 
 .othermessagecontainer{
-    @apply w-full flex justify-start;
+    @apply w-full flex flex-col items-start;
 }
 
 .message {
@@ -29,18 +29,28 @@
     @apply w-full h-[90%] overflow-y-scroll pt-1 ;
 }
 
+.timestamp{
+    @apply p-1 text-xs text-gray-500;
+}
 
 .inputcontainer{
     @apply w-full py-1;
 }
 
+.offerinput{
+    @apply w-[90%]  bg-zinc-100 hover:bg-white focus:bg-white;
+}
 
 .infobar{
     @apply w-full flex flex-row p-1 bg-zinc-100 bg-opacity-60 rounded-lg rounded-b-none;
 }
 
+.title{
+    @apply text-lg font-bold tracking-tight pl-2 truncate;
+}
+
 .left{
-    @apply w-[75%];
+    @apply w-[75%] flex items-center;
 }
 
 .acceptcontainer {

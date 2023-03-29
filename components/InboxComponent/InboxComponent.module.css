@@ -11,9 +11,9 @@
 }
 
 .messages{
-    @apply w-full  my-1;
+    @apply w-full  my-1 mb-2;
 }
 
 .firstcontainer{
-    @apply w-full md:w-[30vw] lg:w-[22vw] xl:w-[18vw] md:pr-1  ;
+    @apply w-full md:w-[30vw] lg:w-[22vw] xl:w-[18vw] md:pr-1 bg-zinc-50 ;
 }
