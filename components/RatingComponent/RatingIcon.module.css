@@ -1,0 +1,15 @@
+.star {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    cursor: pointer;
+  }
+  
+  .filled {
+    fill: #f7d700;
+  }
+  
+  .star:not(:last-child) {
+    margin-right: 0;
+  }
+  

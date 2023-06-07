@@ -53,7 +53,7 @@ useEffect(() => {
           <button disabled={data?.listing_data.data.listing_status == "closed" ? true : false} onClick={()=> acceptOffer.mutate()} className={s.accept}>
             {data?.listing_data.data.listing_status == "closed" || acceptOffer.isLoading ? "Sold" : "Accept Offer"}
           </button> : <button onClick={()=>sendMessage.mutate()} className={s.accept}>
-            Make Offer
+            {data?.listing_data.data.listing_status == "closed" && data?.listing_data.data.listing_purchased_by == user || data?.listing_data.data.listing_purchased_by == `pending-${user}` ? "Review" : "Send Offer"}
           </button>}
           </div>
           <div className={s.profilecontainer}>
