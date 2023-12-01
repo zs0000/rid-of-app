@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import s from "./AvailableItemCard.module.css"
 
-function AvailableItemCard({availableItem}) {
+function AvailableItemCard({availableItem}:any) {
    
   return (
     <Link href={`/listing/${availableItem.id}`} className={s.container}>
