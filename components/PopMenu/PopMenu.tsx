@@ -4,7 +4,7 @@ import s from "./PopMenu.module.css"
 
 function PopMenu() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const handleMenuClick = async(e) => {
+  const handleMenuClick = async(e:any) => {
     e.stopPropagation()
     try {
       setMenuOpen(!menuOpen)     

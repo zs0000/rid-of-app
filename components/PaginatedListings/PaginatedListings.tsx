@@ -24,7 +24,7 @@ const PaginatedListings:React.FC<PaginatedListingsProps>=({pageNumber}:{pageNumb
   const [openMenu, setMenuOpen] = useState(false);  
   const paginatedListings:any = usePaginatedListings({pageNumber})
 
-  const handleToggleMenu = async(e) =>{
+  const handleToggleMenu = async(e:any) =>{
     e.stopPropagation()
     try {
 
