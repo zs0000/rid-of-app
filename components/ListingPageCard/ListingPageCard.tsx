@@ -21,7 +21,7 @@ function ListingPageCard({id, user} : {id:any, user:any}) {
     }
     const router = useRouter()
 
-    const handleInquireSuccess = (data) => {
+    const handleInquireSuccess = (data:any) => {
       if (data.redirect) {
         router.push(`/conversation/${data.data[0].id}`);
       }

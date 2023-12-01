@@ -5,9 +5,24 @@ import {FiMenu} from "react-icons/fi"
 import{useState} from  'react'
 import Link from "next/link"
 
-function PaginatedListings({pageNumber}:{pageNumber:number}) {
+interface Item {
+  imageUrl: string;
+  title: string;
+  price: number;
+}
+
+interface PaginatedListingsData {
+  data?: {
+    items: Item[];
+    maxPageNumber: number;
+  }
+}
+interface PaginatedListingsProps {
+  pageNumber: number;
+}
+const PaginatedListings:React.FC<PaginatedListingsProps>=({pageNumber}:{pageNumber:number}) =>{
   const [openMenu, setMenuOpen] = useState(false);  
-  const paginatedListings = usePaginatedListings({pageNumber})
+  const paginatedListings:any = usePaginatedListings({pageNumber})
 
   const handleToggleMenu = async(e) =>{
     e.stopPropagation()

@@ -8,11 +8,11 @@ function AvailablePage() {
 
 
  const router = useRouter()
- const pageNumber = router.query.pageNumber
+  const {pageNumber}:any = router.query
   return (
     <ProtectedWrapper>
         <div className={s.container}>
-            <PaginatedListings pageNumber={pageNumber ? pageNumber : 1}/>
+            <PaginatedListings pageNumber={pageNumber}/>
         </div>
     </ProtectedWrapper>
   )

@@ -1,9 +1,8 @@
 import AvailableItemCard from "../AvailableItemCard/AvailableItemCard"
 import s from "./AvailableItems.module.css"
 import {useEffect} from 'react'
-function AvailableItems({listingItems}) {
+function AvailableItems({listingItems}:{listingItems:any}) {
     console.log(listingItems)
-
   
     
     
