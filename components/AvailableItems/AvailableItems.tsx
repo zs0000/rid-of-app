@@ -10,7 +10,7 @@ function AvailableItems({listingItems}:{listingItems:any}) {
     <div className={s.container}>
        
         {listingItems ? 
-        listingItems.data?.listings.map((availableItem)=>{
+        listingItems.data?.listings.map((availableItem:any)=>{
           console.log(availableItem)
           if(availableItem.listing_status == "closed"){
             return <></>

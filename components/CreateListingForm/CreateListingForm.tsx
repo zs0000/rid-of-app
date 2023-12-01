@@ -14,7 +14,7 @@ interface Listing {
     listing_price?:any;
     listing_image_url?:string;
   }
-function CreateListingForm({data}) {
+function CreateListingForm({data}:{data:any}) {
     const [price, setPrice] = useState("")
     const [imageSelected, setImageSelected] = useState("");
     const [postingImage, setPostingImage] = useState("none");
@@ -49,21 +49,21 @@ function CreateListingForm({data}) {
     const listingMutation = useCreateListing(inputs)
     const formData = new FormData()
     formData.append("upload_preset", "jrkwcuxy")
-    const handleImageSelect = (e) => {
+    const handleImageSelect = (e:any) => {
         e.stopPropagation()
         document.getElementById('file_input')?.click();
         
     }
-    const handleImageUpload = async(e) =>{
+    const handleImageUpload = async(e:any) =>{
       e.preventDefault()
        try {
        
        
-        axios.post("https://api.cloudinary.com/v1_1/repdb/image/upload",formData).then(function (response) {
+        axios.post("https://api.cloudinary.com/v1_1/repdb/image/upload",formData).then(function (response:any) {
             setImageUrl(response.data.url)
             setPostingImage("uploaded")
           })
-       } catch (err) {
+       } catch (err:any) {
         console.error(err.message)
        }
       } 

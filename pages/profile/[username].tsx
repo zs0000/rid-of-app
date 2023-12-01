@@ -7,7 +7,7 @@ import s from "./Profile.module.css"
 function Profile() {
 
     const router = useRouter()
-    const {username} = router.query
+    const {username}:any = router.query
     const user = useUser();
     const listingItems = useUserListings({username});
   return (
