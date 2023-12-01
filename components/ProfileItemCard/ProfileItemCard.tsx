@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import s from "./ProfileItemCard.module.css"
 
-function ProfileItemCard({item}) {
+function ProfileItemCard({item}:any) {
   return (
     <Link href={`/listing/${item.id}`} className={s.card}>
         <div className={s.imagebox}>

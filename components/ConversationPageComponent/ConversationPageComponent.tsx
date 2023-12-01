@@ -8,7 +8,7 @@ import s from "./ConversationPageComponent.module.css"
 
 
 function ConversationPageComponent({user, conversationId}:{user:string,conversationId:number}) {
-  const {data,error} = useConversationDetails({conversationId, user});
+  const {data,error}:any = useConversationDetails({conversationId, user});
   const router = useRouter()
   const [showMessages, setShowMessages] = useState(false);
   const [messages, setMessages] = useState([])
@@ -57,7 +57,7 @@ function ConversationPageComponent({user, conversationId}:{user:string,conversat
           </div>
           <div className={s.messagescontainer}>
            
-            {showMessages ? messages.map((message)=>(
+            {showMessages ? messages.map((message:any)=>(
                 <div key={message.id} className={message.author == user ? s.mymessagecontainer : s.othermessagecontainer}>
                   <div className={message.author == user ? s.mymessage : s.othermessage}>
                     {message.message_text}

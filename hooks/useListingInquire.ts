@@ -16,7 +16,7 @@ interface ListingInquireOptions {
 }
 
 const listingInquire = async(input:ListingInquireData) =>{
-  const { data } = await supabase.from('listing_conversations').select("*")
+  const { data }:any = await supabase.from('listing_conversations').select("*")
     .eq("listing_id", input.listing_id)
     .eq("sender", input.sender)
 

@@ -12,7 +12,7 @@ interface PaginatedListings{
 
 const paginatedListings = async({pageNumber}:{pageNumber:number}): Promise<PaginatedListings> => {
     const pageSize = 9;
-    const { count } = await supabase.from('listings').select('*', { count: 'exact' });
+    const { count }:any = await supabase.from('listings').select('*', { count: 'exact' });
    
     const offset = (pageNumber - 1) * pageSize;
     const upperRange = offset + pageSize - 1

@@ -3,14 +3,16 @@ import { useMutation, useQuery } from 'react-query'
 import { supabase } from '../utils/supabaseClient'
 
 interface ListingData {
+    sender: any;
+    user_id: any;
+    username: any;
     conversationData: {
     sender: string;
     },
-    listingData: {
+
         
             id: string;
-            username: string;
-            user_id: string;
+     
             listing_title: string;
             listing_description: string;
             listing_price: string;
@@ -23,7 +25,7 @@ interface ListingData {
             listing_purchased_by: string;
         
     
-    }
+    
 }
 
 

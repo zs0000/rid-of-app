@@ -2,7 +2,7 @@ import useUserListings from "../../hooks/useUsersListings"
 import ProfileItemCard from "../ProfileItemCard/ProfileItemCard"
 import s from "./ProfileItems.module.css"
 
-function ProfileItems({username}) {
+function ProfileItems({username}:any) {
  let loadingE =[{e:"ef"},{e:"ea"},{e:"ew"},{e:"er"},{e:"ett"},{e:"eh"}]
   const {data, error} = useUserListings({username})
   console.log(data)

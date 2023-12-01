@@ -3,9 +3,9 @@ import { useRouter } from "next/router"
 import useMessagePreview from "../../hooks/useMessagePreview"
 import s from "./InboxPreviewCard.module.css"
 
-function InboxPreviewCard({conversationId,listingId,sender}:{conversationId:number,listingId:number,sender:string}) {
+function InboxPreviewCard({conversationId,listingId,sender}:any) {
   
-    const {data, isLoading,error} = useMessagePreview({conversationId, listingId, sender})
+    const {data, isLoading,error}:any = useMessagePreview({conversationId, listingId, sender})
     const router = useRouter()
     function handleClickConversation(e:Event){
         router.push(`/conversation/${conversationId}`)

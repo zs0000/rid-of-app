@@ -10,7 +10,7 @@ import Link from "next/link"
 import useAcceptOffer from "../../hooks/useAcceptOffer"
 const now = new Date();
 
-function InboxConversationComponent({conversationId, conversation, user}) {
+function InboxConversationComponent({conversationId, conversation, user}:any) {
 
   const [myRecentMessage, setMyRecentMessage] = useState([])
   const [theirRecentMessage, setTheirMessage] = useState([])
@@ -26,7 +26,7 @@ function InboxConversationComponent({conversationId, conversation, user}) {
   const sendMessage = useSendMessage(messageData)
  
   const messagesRef = useRef<HTMLDivElement>(null);
-const {data, isLoading, error} = useConversationDetails({conversationId, user}) 
+const {data, isLoading, error}:any = useConversationDetails({conversationId, user}) 
 console.log(data)
 
 const acceptOffer = useAcceptOffer({listingData:data?.listing_data.data, conversationData:data?.conversation_data})
@@ -78,7 +78,7 @@ useEffect(() => {
       
         <div ref={messagesRef} className={s.messagescontainer}>
            
-            {conversation ? conversation.map((message)=>(
+            {conversation ? conversation.map((message:any)=>(
                 <div key={message.id} className={message.author == user ? s.mymessagecontainer : s.othermessagecontainer}>
                   <div className={message.author == user ? s.mymessage : s.othermessage}>
                     {message.message_text}

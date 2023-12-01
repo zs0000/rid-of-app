@@ -9,7 +9,7 @@ const conversationDetails = async({conversationId,user}:{conversationId:number,u
     .select()
     .eq("id",conversationId)
     .single()
-    let messages =[]
+    let messages:any =[]
     if(data ==  null){
   
         return {a:1,d:2,authenticated:false, messages}

@@ -7,9 +7,9 @@ import InboxPreviewCard from "../InboxPreviewCard/InboxPreviewCard"
 import Loader from "../Loader/Loader"
 import s from "./InboxComponent.module.css"
 function InboxComponent({user}:{user:string}) {
-    const [messages, setMessages] = useState([])
+    const [messages, setMessages] = useState<any>([])
     const [startedConversations, setStartedConversation] = useState([])
-    const {data, isLoading, error} = useUserMessages({user})
+    const {data, isLoading, error}:any = useUserMessages({user})
     const [conversation, setConversation] = useState([])
     const [conversationId, setConversationId] = useState<Number>(0)
     const [conversationSelected, setConversationSelected] = useState<Boolean>(false);
@@ -30,11 +30,11 @@ function InboxComponent({user}:{user:string}) {
   
     const gg = useConversation({user})
    
-    async function handleConversationSelect(message){
+    async function handleConversationSelect(message:any){
         try {
 
            
-           const {data,error} = await supabase
+           const {data,error}:any = await supabase
            .from("conversation_messages")
            .select("*")
            .eq("conversation_id",message.id)
@@ -47,7 +47,7 @@ function InboxComponent({user}:{user:string}) {
 
           
 
-        } catch (err) {
+        } catch (err:any) {
             console.error(err.message)
         }
     }
@@ -64,7 +64,7 @@ if(isLoading){
             <span>
                 Selling
             </span>
-        {conversationsLoaded ? messages.map((message)=>(
+        {conversationsLoaded ? messages.map((message:any)=>(
             <div className={s.messagecard} key={message.id} onClick={()=>handleConversationSelect(message)}>
                 <InboxPreviewCard conversationId={Number(message.id)} listingId={Number(message.listing_id)} sender={message.sender} />
             </div>
@@ -74,7 +74,7 @@ if(isLoading){
         <span>
                 Buying
             </span>
-        {conversationsLoaded ? startedConversations.map((message)=>(
+        {conversationsLoaded ? startedConversations.map((message:any)=>(
             <div className={s.messagecard} key={message.id} onClick={()=>handleConversationSelect(message)}>
                 <InboxPreviewCard conversationId={Number(message.id)} listingId={Number(message.listing_id)} sender={message.sender} />
             </div>

@@ -13,6 +13,9 @@ interface User{
 
 function ProfileCard({username}:{username:User}) {
 
+    const sortUsernames = () =>{
+        alert("this feature does not exist yet")
+    }
     
     let sellingItems = [
         {
@@ -44,7 +47,7 @@ function ProfileCard({username}:{username:User}) {
     const {data} = useUser()
 
     
-    const handleClickMessage  = async(e) =>{
+    const handleClickMessage  = async(e:any) =>{
         e.preventDefault()
         try {
                    
